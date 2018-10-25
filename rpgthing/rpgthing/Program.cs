@@ -100,7 +100,12 @@ namespace rpgthing
             battler player = new battler(playerName, 1, "says something hurtful");
             //first fight (WIP)
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("REMEMBER TO WRITE A STORY HERE OR SOMETHING");
+            Console.WriteLine(player.getName() + "began their journey by leaving their home.\n"+
+                player.getName()+" allowed Crooker the usual time to pay someone back: 8 days, 6 hours.\n"+
+                "But Crooker had a lot of connections in Grinanbear.\n"+
+                "And as "+player.getName() + "was gallantly walking to confront their once friend,\n"+
+                "they could feel a pair of eyes glaring into them.\n"+
+                "One of Crooker's connections was about to 'connect' to "+player.getName()+".");
 
             Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("\nPress Enter to continue...");
@@ -116,6 +121,9 @@ namespace rpgthing
                     firstFight.battle();
                     break;
             }
+
+            Console.WriteLine("Story event too!");
+            Console.ReadKey();
         }
     }
 }

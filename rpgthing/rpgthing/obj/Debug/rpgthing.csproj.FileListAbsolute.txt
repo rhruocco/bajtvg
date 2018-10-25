@@ -23,3 +23,17 @@ I:\rpgthing\rpgthing\obj\Debug\rpgthing.csprojAssemblyReference.cache
 I:\rpgthing\rpgthing\obj\Debug\rpgthing.csproj.CoreCompileInputs.cache
 I:\rpgthing\rpgthing\obj\Debug\rpgthing.exe
 I:\rpgthing\rpgthing\obj\Debug\rpgthing.pdb
+C:\Users\Ryan\Documents\GitHub\bajtvg\rpgthing\rpgthing\bin\Debug\rpgthing.exe.config
+C:\Users\Ryan\Documents\GitHub\bajtvg\rpgthing\rpgthing\bin\Debug\rpgthing.exe
+C:\Users\Ryan\Documents\GitHub\bajtvg\rpgthing\rpgthing\bin\Debug\rpgthing.pdb
+C:\Users\Ryan\Documents\GitHub\bajtvg\rpgthing\rpgthing\obj\Debug\rpgthing.csprojAssemblyReference.cache
+C:\Users\Ryan\Documents\GitHub\bajtvg\rpgthing\rpgthing\obj\Debug\rpgthing.csproj.CoreCompileInputs.cache
+C:\Users\Ryan\Documents\GitHub\bajtvg\rpgthing\rpgthing\obj\Debug\rpgthing.exe
+C:\Users\Ryan\Documents\GitHub\bajtvg\rpgthing\rpgthing\obj\Debug\rpgthing.pdb
+C:\Users\Ryan\Documents\Programming\GitHub\bajtvg\rpgthing\rpgthing\bin\Debug\rpgthing.exe.config
+C:\Users\Ryan\Documents\Programming\GitHub\bajtvg\rpgthing\rpgthing\bin\Debug\rpgthing.exe
+C:\Users\Ryan\Documents\Programming\GitHub\bajtvg\rpgthing\rpgthing\bin\Debug\rpgthing.pdb
+C:\Users\Ryan\Documents\Programming\GitHub\bajtvg\rpgthing\rpgthing\obj\Debug\rpgthing.csprojAssemblyReference.cache
+C:\Users\Ryan\Documents\Programming\GitHub\bajtvg\rpgthing\rpgthing\obj\Debug\rpgthing.csproj.CoreCompileInputs.cache
+C:\Users\Ryan\Documents\Programming\GitHub\bajtvg\rpgthing\rpgthing\obj\Debug\rpgthing.exe
+C:\Users\Ryan\Documents\Programming\GitHub\bajtvg\rpgthing\rpgthing\obj\Debug\rpgthing.pdb

@@ -15,6 +15,7 @@ namespace rpgthing
         private int stickers = 3;
         private String[] adjectives = {"Stinky","Smelly","No-Good","Ramblin'","Evil","Strange","Foul-Smelling",
             "Three-Eyed","Angry","Funny","Questionable" };
+
         private String[] nouns = {"Creature","Lizard Boy","Bum","Goblin","Floating Head","Toupee","Fungus",
             "Salamander","Feline","Sentient Tree","Crow"};
 
@@ -120,13 +121,13 @@ namespace rpgthing
                     Console.Write(name);
 
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
-                    Console.Write(" put a sticker on themself! " + name + " feels much better! HP restored!\n");
+                    Console.Write(" put a sticker on themself! " + name + " feels much better! HP restored!");
                     break;
      
 
                 case 0:
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine(name + " is out of stickers!\n");
+                    Console.WriteLine(name + " is out of stickers!");
                     break;
             }
         }
@@ -146,6 +147,36 @@ namespace rpgthing
         public int getStickers()
         {
             return stickers;
+        }
+
+        /*
+         * Updates the private variable stickers with parameter newStickers
+         */ 
+         public void updateStickers(int newStickers)
+        {
+            stickers = newStickers;
+        }
+
+        /*
+         * Gives the battler a random amount of expirience after they win a battle
+         */
+         public void giveXp(int exp)
+        {
+            xp += exp;
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write(name);
+
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.Write(" gained " + exp + " exp!");
+            
+            if (xp >= 100)
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.Write("\n"+name.ToUpper());
+
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.Write(" LEVELED UP!");
+            }
         }
     }
 }
