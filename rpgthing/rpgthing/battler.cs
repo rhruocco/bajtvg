@@ -30,7 +30,7 @@ namespace rpgthing
             hp = maxhp;
         }
 
-        /**
+        /*
          * Used to generate random numbers
          * Written with the help of: 
          * https://stackoverflow.com/questions/3602392/round-double-to-two-decimal-places
@@ -40,7 +40,7 @@ namespace rpgthing
         {
             double num = rng.NextDouble();
             num *= min + (max - min);
-            return Math.Round(num, Convert.ToInt32(num + 1), MidpointRounding.AwayFromZero);
+            return Math.Round(num, Convert.ToInt32(2), MidpointRounding.AwayFromZero);
         }
 
         /*
@@ -60,17 +60,18 @@ namespace rpgthing
             }
             else
             {
-                return randomnumgen(-.3, .4) + level;
+                return randomnumgen(-.1, .3) + level;
             }
         }
 
-        /**
+        /*
          * Subtracts the parameter 'damage' from the variable hp
+         * https://stackoverflow.com/questions/3602392/round-double-to-two-decimal-places
          */
         public void receiveDamage(double dmg)
         {
             hp -= dmg;
-            hp = Math.Round(hp, Convert.ToInt32(hp + 1), MidpointRounding.AwayFromZero);
+            hp = Math.Round(hp, Convert.ToInt32(2), MidpointRounding.AwayFromZero);
         }
 
         /*
@@ -120,13 +121,22 @@ namespace rpgthing
                     Console.Write(name);
 
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
-                    Console.Write(" put a sticker on themself! " + name + " feels much better! HP restored!");
+                    Console.Write(" put a sticker on themself! ");
+
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write(name);
+
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.Write(" feels much better! HP restored!");
                     break;
      
 
                 case 0:
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write(name);
+
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine(name + " is out of stickers!");
+                    Console.Write(" is out of stickers!");
                     break;
             }
         }
@@ -161,15 +171,20 @@ namespace rpgthing
          */
          public void giveXp(int exp)
         {
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.Clear();
             xp += exp;
 
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Blue;
             Console.Write(name);
 
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.Write(" won!\n");
+
+            Console.Write("\n"+name);
+
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
-            Console.Write(" gained " + exp + " exp!");
+            Console.Write(" gained " + exp + " exp!\n");
             
             if (xp >= 100)
             {
@@ -177,28 +192,28 @@ namespace rpgthing
                 Console.Write("\n"+name.ToUpper());
 
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.Write(" LEVELED UP!");
+                Console.Write(" LEVELED UP!\n");
 
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.Write("\nLevel: "+level + " --> ");
 
                 level++;
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.Write(level);
+                Console.Write(level+"\n");
 
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.Write("\nHP: ");
                 Console.ForegroundColor = ConsoleColor.Black;
+                Console.Write("\nHP: ");
 
                 Console.Write(maxhp+" --> ");
 
                 maxhp = level * 10;
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.Write(maxhp);
-
-                Console.WriteLine("\nPress Enter to Continue.");
-                Console.ReadKey();
             }
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("\n\nPress Enter to Continue.");
+            Console.ReadKey();
+            Console.Clear();
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace rpgthing
 {
-    /**
+    /*
      * Executes a fight between two fighters, one user-controlled
      */
     class battlemanager
@@ -16,10 +16,10 @@ namespace rpgthing
             "uses a word wrong", "says something unintentionally funny" };
         private String[] entryDialogues = { "draws near", "lurches forward", "is rarin' to fight", "won't back down", "must be stopped", "wants to duel", "will fight tooth and nail" };
 
-        /**
+        /*
          * Constructor for the battlemanager class. Defines the player controlled battler and their opponent, as well as the amount of stickers the player has coming into the fight
          */
-        public battlemanager(rpgthing.battler p, rpgthing.battler f)
+        public battlemanager(battler p, battler f)
         {
             player = p;
             foe = f;
@@ -35,8 +35,7 @@ namespace rpgthing
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
 
-
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Yellow;
 
             Console.WriteLine(player.getName() + " is too insulted to go on!" +
                 "\nWould you like to retry? Y/N");
@@ -107,11 +106,10 @@ namespace rpgthing
 
             if (plugging)
             {
-
                 if (rng.Next(0, 101) < 44)
                 {
                     silenceDmg = foe.getLvl() + (rng.NextDouble() * (-.3 + (.4 - -.3)));
-                    silenceDmg = Math.Round(silenceDmg, Convert.ToInt32(silenceDmg + 1), MidpointRounding.AwayFromZero);
+                    silenceDmg = Math.Round(silenceDmg, Convert.ToInt32(2), MidpointRounding.AwayFromZero);
                 }
                 damage /= 2;
             }
@@ -159,9 +157,9 @@ namespace rpgthing
         }
 
         /*
-         * Plays out the battle and returns the winner
+         * Plays out the battle and returns the modified battler
          */
-        public void battle()
+        public battler battle()
         {
             Console.BackgroundColor = ConsoleColor.Yellow;
             Console.Clear();
@@ -218,6 +216,11 @@ namespace rpgthing
                     case "p":
                     case "plug ears":
                         isPlugging = true;
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.Write(player.getName());
+
+                        Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                        Console.Write(" is plugging their ears!");
                         break;
 
                     case "sticker":
@@ -252,6 +255,7 @@ namespace rpgthing
             {
                 player.giveXp(rng.Next(85, 100));
             }
+            return player;
         }
     }
 }

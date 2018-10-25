@@ -44,3 +44,10 @@ C:\Users\mrche\Documents\GitHub\bajtvg\rpgthing\rpgthing\obj\Debug\rpgthing.cspr
 C:\Users\mrche\Documents\GitHub\bajtvg\rpgthing\rpgthing\obj\Debug\rpgthing.csproj.CoreCompileInputs.cache
 C:\Users\mrche\Documents\GitHub\bajtvg\rpgthing\rpgthing\obj\Debug\rpgthing.exe
 C:\Users\mrche\Documents\GitHub\bajtvg\rpgthing\rpgthing\obj\Debug\rpgthing.pdb
+C:\Users\Ryan.ruocco\Desktop\bajtvg-master\bajtvg-master\rpgthing\rpgthing\bin\Debug\rpgthing.exe.config
+C:\Users\Ryan.ruocco\Desktop\bajtvg-master\bajtvg-master\rpgthing\rpgthing\bin\Debug\rpgthing.exe
+C:\Users\Ryan.ruocco\Desktop\bajtvg-master\bajtvg-master\rpgthing\rpgthing\bin\Debug\rpgthing.pdb
+C:\Users\Ryan.ruocco\Desktop\bajtvg-master\bajtvg-master\rpgthing\rpgthing\obj\Debug\rpgthing.csprojAssemblyReference.cache
+C:\Users\Ryan.ruocco\Desktop\bajtvg-master\bajtvg-master\rpgthing\rpgthing\obj\Debug\rpgthing.csproj.CoreCompileInputs.cache
+C:\Users\Ryan.ruocco\Desktop\bajtvg-master\bajtvg-master\rpgthing\rpgthing\obj\Debug\rpgthing.exe
+C:\Users\Ryan.ruocco\Desktop\bajtvg-master\bajtvg-master\rpgthing\rpgthing\obj\Debug\rpgthing.pdb
