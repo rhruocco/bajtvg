@@ -9,8 +9,7 @@ namespace rpgthing
     class battler
     {
         private String name, insult;
-        private double level, hp, xp;
-        private double maxhp = 10;
+        private double level, hp, xp, maxhp;
         private Random rng = new Random();
         private int stickers = 3;
         private String[] adjectives = {"Stinky","Smelly","No-Good","Ramblin'","Evil","Strange","Foul-Smelling",
@@ -18,6 +17,18 @@ namespace rpgthing
 
         private String[] nouns = {"Creature","Lizard Boy","Bum","Goblin","Floating Head","Toupee","Fungus",
             "Salamander","Feline","Sentient Tree","Crow"};
+
+        /*
+        * Constructor for the battler class. Assigns the name, level and hp 
+        */
+        public battler(String n, double lvl, String insultt)
+        {
+            name = n;
+            level = lvl;
+            maxhp = lvl * 10;
+            insult = insultt;
+            hp = maxhp;
+        }
 
         /**
          * Used to generate random numbers
@@ -32,7 +43,7 @@ namespace rpgthing
             return Math.Round(num, Convert.ToInt32(num + 1), MidpointRounding.AwayFromZero);
         }
 
-        /**
+        /*
          * Returns the level + a random amount as damage
          */
         public double attack()
@@ -60,18 +71,6 @@ namespace rpgthing
         {
             hp -= dmg;
             hp = Math.Round(hp, Convert.ToInt32(hp + 1), MidpointRounding.AwayFromZero);
-        }
-
-        /*
-         * Constructor for the battler class. Assigns the name, level and hp 
-         */
-        public battler(String n, double lvl, String insultt)
-        {
-            name = n;
-            level = lvl;
-            maxhp = lvl * 10;
-            insult = insultt;
-            hp = maxhp;
         }
 
         /*
@@ -162,7 +161,10 @@ namespace rpgthing
          */
          public void giveXp(int exp)
         {
+            Console.Clear();
             xp += exp;
+
+            Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.Write(name);
 
@@ -176,6 +178,26 @@ namespace rpgthing
 
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.Write(" LEVELED UP!");
+
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.Write("\nLevel: "+level + " --> ");
+
+                level++;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.Write(level);
+
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.Write("\nHP: ");
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                Console.Write(maxhp+" --> ");
+
+                maxhp = level * 10;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.Write(maxhp);
+
+                Console.WriteLine("\nPress Enter to Continue.");
+                Console.ReadKey();
             }
         }
     }
