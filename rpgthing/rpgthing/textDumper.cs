@@ -151,7 +151,7 @@ namespace rpgthing
                 "To the left, a winding and dark pathway that ended very close to Crooker's.\n" +
                 "To the right, a sunny and peaceful dirt road that lead to an out-of-the-way farm.\n" +
                 "The left would surely yield more battles, but would get {0} right where they needed to go.\n" +
-                "The right is a much more peaceful path, but it might take just a bit longer to get to Crooker.\n"
+                "The right is a much more peaceful path, but it might take just a bit longer to get to Crooker.\n"+
                 "\n\nWhich way will {0} go?!\n", name, enemyName);
 
             Console.ForegroundColor = ConsoleColor.Red;
@@ -160,7 +160,7 @@ namespace rpgthing
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.Write("[R] - Right (Peaceful Farm)");
 
-            battler enemy;
+            battler enemy = new battler("farm", 1, "a");
 
             switch (Console.ReadLine().ToLower())
             {
@@ -168,7 +168,7 @@ namespace rpgthing
                 case "l":
                 case "dark path":
                 case "path":
-                    enemy = darkPath(name);
+                    //enemy = darkPath(name);
                     break;
                 case "right":
                 case "r":
@@ -210,8 +210,9 @@ namespace rpgthing
          */ 
          public battler farm(string name)
         {
+            battler farmer;
             Console.BackgroundColor = ConsoleColor.DarkYellow;
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Cyan;
 
             Console.Clear();
 
@@ -224,6 +225,71 @@ namespace rpgthing
             Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("\nPress Enter to hear the old man's story.");
             Console.ReadKey();
+            Console.Clear();
+
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write("'Well, it was about 1950 when I was a young boy, and I had a pep in my step, and an attitude to boot. I decided to find my father's building that he attended every day for his work as an accountant.\n" +
+                "I had taken the elevator up to the highest floor of the tower. Of course, back then, we had elevator men...I think they were called Button Men? Or was it Lift Concierge? Well, anyways, I was in the elevator, and I was thrilled to be there.\n" +
+                "I tried tipping the...Lift Concierge? the til I had reaped from my lemonade stand from the summer prior. My stand was a simple wooden crate with the words: 'Larry Lemon's Lemonade' painted on the crate. I charged 25 cents per glass, which, at the time, was quite expensive.\n"+
+                "In fact, people called me a greedy scoundrel for this, at the time, outrageous pricing! They called me Little Greedy No-Good Scum Lemon! Quite harsh, but, at the time, I suppose it was fair...Anyways, the...Button Man? respectfully declined my offer, and he was right to do it!\n"+
+                "Accepting money from a child was illegal at the time, not to mention socially unacceptable! So eventually the elevator reached the tip top tap of the building, and I was finally at my father's office. And what an office it was!\n"+
+                "He had a *Hickory* chair that was reserved specifically for the highest-paying clientele! After all, my father was a fantastic agent. Er, I mean, accountant. No...no, agent! Yes, he was an agent! He worked with such actors as Rodney Goldanball, and Jeffery Stavenherpe!\n" +
+                "Now, these names may not mean much to a young spring chicken like yourself, but I can assure you, they were the talk of the town at the time! Oh my, I remember lining up before the school bell while chattering about what pictures Goldanball and Stavenherpe were to head next, such excitement...\n" +
+                "Anyhow, once I was situated in my father's office, he gave me what we called at the time a 'Delightful Sphere'! But you may know them as 'Delightful Stickies'! or maybe 'Lolipops'! Anywho, he offered me a 'Delightful Sphere', but I declined. I hated them! I sat in his office for the next 5 hours as he worked.\n" +
+                "Oh, what a day...You know what, now? I think I just might plum tell it again! I quite enjoy telling you stories...I hope you like hearing them! Well, I guess I just told the one...Well, I just hope that your paying attention, these stories mean quite a lot to this old-timer! Anywhat, here we go again!\n"+
+                "Well, it was about 1950 when I was a young boy, and I had a pep in my step, and an attitude to boot. I decided to find my father's building that he attended every day for his work as an accountant.\n" +
+                "I had taken the elevator up to the highest floor of the tower. Of course, back then, we had elevator men...I think they were called Button Men? Or was it Lift Concierge? Well, anyways, I was in the elevator, and I was thrilled to be there.\n" +
+                "I tried tipping the...Lift Concierge? the til I had reaped from my lemonade stand from the summer prior. My stand was a simple wooden crate with the words: 'Larry Lemon's Lemonade' painted on the crate. I charged 25 cents per glass, which, at the time, was quite expensive.\n" +
+                "In fact, people called me a greedy scoundrel for this, at the time, outrageous pricing! They called me Little Greedy No-Good Scum Lemon! Quite harsh, but, at the time, I suppose it was fair...Anyways, the...Button Man? respectfully declined my offer, and he was right to do it!\n" +
+                "Accepting money from a child was illegal at the time, not to mention socially unacceptable! So eventually the elevator reached the tip top tap of the building, and I was finally at my father's office. And what an office it was!\n" +
+                "He had a *Hickory* chair that was reserved specifically for the highest-paying clientele! After all, my father was a fantastic agent. Er, I mean, accountant. No...no, agent! Yes, he was an agent! He worked with such actors as Rodney Goldanball, and Jeffery Stavenherpe!\n" +
+                "Now, these names may not mean much to a young spring chicken like yourself, but I can assure you, they were the talk of the town at the time! Oh my, I remember lining up before the school bell while chattering about what pictures Goldanball and Stavenherpe were to head next, such excitement...\n" +
+                "Anyhow, once I was situated in my father's office, he gave me what we called at the time a 'Delightful Sphere'! But you may know them as 'Delightful Stickies'! or maybe 'Lolipops'! Anywho, he offered me a 'Delightful Sphere', but I declined. I hated them! I sat in his office for the next 5 hours as he worked.\n"+
+                "Oh, what a day...'\n");
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\nPress Enter if you're done reading the old man's dumb story.");
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write("The old man smiles, thrilled to finally have an audience. {0} is just thrilled that it's over.\n" +
+                "But then the old man's smile fades. He wonders aloud if {0} was really paying attention.\n"+
+                "The old man wants {0} to prove that they weren't spacing out. He asks {0}:\n", name);
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\nWhat type of wood was the office chair made of?");
+            switch(Console.ReadLine().ToLower())
+            {
+                case "hickory wood":
+                case "hickory":
+                    Console.Clear();
+
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("The old man smiles, confident that {0} payed attention.\n"+
+                        "The old man is so overjoyed, he allows {0} to talk at *him* for a while!\n"+
+                        "He says {0} can say anything that they want to him, even insulting things!\n",name);
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("Press Enter to insult the nice old man.");
+                    Console.ReadKey();
+                    farmer = new battler("Old Man", 0.01, "just sits there looking kinda sad");
+                    break;
+
+                default:
+                    Console.Clear();
+
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("A grimace forms on the old man's face!\n"+
+                        "Oh boy, he's really mad!\n"+
+                        "'All I wanted was for you to listen to my tale, and you can't even do that?' he says.\n"+
+                        "'I've been holding back a lot of nasty things I could say to you, but no more!'", name);
+
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("Press Enter to mince words with the geezer!");
+                    Console.ReadKey();
+                    farmer = new battler("Angry Old Man", 2, "says something bad about "+name+"'s generation");
+                    break;
+            }
+            return farmer;
         }
     }
 }

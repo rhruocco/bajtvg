@@ -46,6 +46,7 @@ namespace rpgthing
             player = secondBattle.battle();
 
             battlemanager thirdBattle = new battlemanager(player, textDump.oldManBranch(player.getName(), secondEnemy.getName()));
+            player = thirdBattle.battle();
         }
     }
 }

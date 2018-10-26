@@ -25,6 +25,11 @@ namespace rpgthing
         {
             name = n;
             level = lvl;
+            //DEBUG RYAN RYAAAAAAN REMOVE THIS LATEEEERRR
+            if (n == "debug")
+            {
+                level = 99;
+            }
             maxhp = lvl * 10;
             insult = insultt;
             hp = maxhp;
