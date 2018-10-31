@@ -168,7 +168,7 @@ namespace rpgthing
                 case "l":
                 case "dark path":
                 case "path":
-                    //enemy = darkPath(name);
+                    enemy = darkPath(name);
                     break;
                 case "right":
                 case "r":
@@ -290,6 +290,55 @@ namespace rpgthing
                     break;
             }
             return farmer;
+        }
+
+        /*
+         * Called if the player chooses the dark path
+         */ 
+         public battler darkPath(string name)
+        {
+            battler baddie;
+            Console.BackgroundColor = ConsoleColor.DarkMagenta;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Clear();
+
+            Console.Write("{0} strolled nervously down the path, constalty darting their eyes left and right.\n" +
+                "The trees were seemingly-never-ending, and the calls of the crows were impossible to place the source of.\n" +
+                "Suddenly, there was a rumbling in the trees. The hairs on {0}'s back stood up. Out of the trees, a creature attacks...\n", name);
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Press Enter to continue...");
+            Console.ReadKey();
+
+            baddie = new battler("", 2, "tells " + name + " a horrifying truth");
+            baddie.randomName();
+            return baddie;
+        } 
+
+        /*
+         * The text right before the final battle. Asks whether or not you want to grind before the fight, and returns your choice as a string
+         */
+         public string beforeFinalBattle(string name)
+        {
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Clear();
+
+            Console.Write("{0}'s path to Crooker's palace was finally unimpeded.\n" +
+                "But as Crooker's castle grew closer and closer, {0} wondered if they were ready.\n" +
+                "{0} knew that Crooker was a level 5 insulter, and wanted to be sure they were ready for the fight.\n" +
+                "{0} then noticed a nearby field, likely filled with baddies.\n" +
+                "{0} considered taking on some more enemies to level up before Crooker.\n", name);
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\nWould you like to battle some more enemies before the final fight? Y/N");
+            return Console.ReadLine();
+        }
+
+        /*
+         * The text for the final battle
+         */
+         public void finalBattle(string name)
+        {
+
         }
     }
 }

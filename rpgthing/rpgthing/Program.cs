@@ -47,6 +47,21 @@ namespace rpgthing
 
             battlemanager thirdBattle = new battlemanager(player, textDump.oldManBranch(player.getName(), secondEnemy.getName()));
             player = thirdBattle.battle();
+
+            string grind = textDump.beforeFinalBattle(player.getName());
+            
+            while (grind.ToLower() == "y" || grind.ToLower() == "yes")
+            {
+                battler grindee = new battler("", player.getLvl(), "tells " + player.getName() + " they'll never be good enough");
+                battlemanager grinder = new battlemanager(player, grindee);
+                player = grinder.battle();
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.Clear();
+
+                Console.WriteLine("Take on another enemy? Y/N");
+                grind = Console.ReadLine();
+            }
         }
     }
 }
