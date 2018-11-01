@@ -44,7 +44,7 @@ namespace rpgthing
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.Write(name);
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write(" was not payed the 20 coins they were owed from their mate Crooker.\n\nPress Enter to begin...");
+            Console.Write(" was not payed the coins they were owed from their mate Crooker.\n\nPress Enter to begin...");
             Console.ReadKey();
 
             ConsoleColor[] colors = { ConsoleColor.Black, ConsoleColor.DarkCyan, ConsoleColor.DarkMagenta, ConsoleColor.DarkYellow, ConsoleColor.Red, ConsoleColor.Blue, ConsoleColor.DarkGreen, ConsoleColor.DarkGray, ConsoleColor.Magenta };
@@ -96,10 +96,10 @@ namespace rpgthing
             Console.Write("[P] - Plug Ears");
             Console.ForegroundColor = ConsoleColor.Black;
             Console.Write(" - Plugs your ears, reducing insult damage." +
-                "\nThere's also a random chance that your opponent will take damage from the awkawardness of your silence!");
+                "\n\t\t  There's also a random chance that your opponent will take damage from the awkawardness of your silence!");
 
             Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.Write("[S] - Use Sticker");
+            Console.Write("\n[S] - Use Sticker");
             Console.ForegroundColor = ConsoleColor.Black;
             Console.Write(" - Use a sticker, recovering all HP. You start with 3 of them!\n" +
                               "You can type the letter in brackets, or type out the full choice. But don't enter anything other than these options," +
@@ -222,7 +222,7 @@ namespace rpgthing
                 "The old man simply wanted someone to listen to a story the old man had been itching to tell for a while.\n"+
                 "{0} agrees, looking forward to the food and room much more than the story.\n", name);
 
-            Console.ForegroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("\nPress Enter to hear the old man's story.");
             Console.ReadKey();
             Console.Clear();
@@ -247,7 +247,7 @@ namespace rpgthing
                 "Anyhow, once I was situated in my father's office, he gave me what we called at the time a 'Delightful Sphere'! But you may know them as 'Delightful Stickies'! or maybe 'Lolipops'! Anywho, he offered me a 'Delightful Sphere', but I declined. I hated them! I sat in his office for the next 5 hours as he worked.\n"+
                 "Oh, what a day...'\n");
 
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("\nPress Enter if you're done reading the old man's dumb story.");
             Console.ReadKey();
             Console.Clear();
@@ -256,7 +256,7 @@ namespace rpgthing
             Console.Write("The old man smiles, thrilled to finally have an audience. {0} is just thrilled that it's over.\n" +
                 "But then the old man's smile fades. He wonders aloud if {0} was really paying attention.\n"+
                 "The old man wants {0} to prove that they weren't spacing out. He asks {0}:\n", name);
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("\nWhat type of wood was the office chair made of?");
             switch(Console.ReadLine().ToLower())
             {
@@ -281,10 +281,10 @@ namespace rpgthing
                     Console.WriteLine("A grimace forms on the old man's face!\n"+
                         "Oh boy, he's really mad!\n"+
                         "'All I wanted was for you to listen to my tale, and you can't even do that?' he says.\n"+
-                        "'I've been holding back a lot of nasty things I could say to you, but no more!'", name);
+                        "'I've been holding back a lot of nasty things I could say to you, but no more!'\n", name);
 
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine("Press Enter to mince words with the geezer!");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("\nPress Enter to mince words with the geezer!");
                     Console.ReadKey();
                     farmer = new battler("Angry Old Man", 2, "says something bad about "+name+"'s generation");
                     break;
@@ -305,8 +305,8 @@ namespace rpgthing
             Console.Write("{0} strolled nervously down the path, constalty darting their eyes left and right.\n" +
                 "The trees were seemingly-never-ending, and the calls of the crows were impossible to place the source of.\n" +
                 "Suddenly, there was a rumbling in the trees. The hairs on {0}'s back stood up. Out of the trees, a creature attacks...\n", name);
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("Press Enter to continue...");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\nPress Enter to continue...");
             Console.ReadKey();
 
             baddie = new battler("", 2, "tells " + name + " a horrifying truth");
@@ -338,6 +338,78 @@ namespace rpgthing
          */
          public void finalBattle(string name)
         {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
+
+            Console.Clear();
+
+            Console.Write("{0} took a breath, nodded, and began closing the gap between them and Crooker's.\n" +
+                "{0} had been to the castle many times before, but now, it seemed so ominous. {0} was anxious, but determined.\n" +
+                "{0} kicked open the large doors to the castle, and strutted right into the throne room. There sat Crooker, slumped over in his chair.\n" +
+                "{0} demanded one final time that Crooker give them the money he owed them. Crooker simply smiled.\n" +
+                "{0} braced themself, for they knew the final insult battle was about to begin.", name);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\nPress Enter to continue");
+            Console.ReadKey();
+        }
+
+        /*
+         * The text after the final battle
+         */
+         public void youWin(string name)
+        {
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Clear();
+
+            Console.Write("Insulted into submission, Crooker weakly reached into his wallet and fished out the money {0} was owed.\n" +
+                "'Here's your 5 coins...' Crooker sighed.\n" +
+                "{0} nodded. It was over. {0} had enough coins to purchase a bottle of milk.\n" +
+                "{0} began their journey home, satisfied. And while {0} was ultimately unable to purchase milk because a coin fell out of their pocket while walking home...\n" +
+                "Well, I guess it's the principle of the thing.\n", name);
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\nPress Enter to see who made this thing!");
+            Console.ReadKey();
+            credits();
+        }
+
+        /*
+         * The credits
+         */
+         public void credits()
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.Clear();
+
+            Console.WriteLine("--CREDITS--\n");
+
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("Designer - Ryan Ruocco");
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Writer - Ryan Ruocco");
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Programmer - Ryan Ruocco");
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Is eating a Twizzler right now - Ryan Ruocco\n");
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n--THE FOLLOWING WEBPAGES WERE CITED TO MAKE THIS GAME--\n");
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("https://stackoverflow.com/questions/1064901/random-number-between-2-double-numbers");
+            Console.WriteLine("https://stackoverflow.com/questions/3602392/round-double-to-two-decimal-places");
+            Console.WriteLine("https://stackoverflow.com/questions/5682408/command-to-close-an-application-of-console \n");
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\nThank You For Playing!\n\nPress Enter to Exit");
+
+            Console.ReadKey();
 
         }
     }

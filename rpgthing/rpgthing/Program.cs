@@ -38,7 +38,7 @@ namespace rpgthing
 
             textDump.secondEncounter(player.getName(), firstEnemy.getName());
 
-            battler secondEnemy = new battler("", 1, " says something mean");
+            battler secondEnemy = new battler("", 1, "says something mean");
             secondEnemy.randomName();
 
             battlemanager secondBattle = new battlemanager(player, secondEnemy);
@@ -52,9 +52,12 @@ namespace rpgthing
             
             while (grind.ToLower() == "y" || grind.ToLower() == "yes")
             {
-                battler grindee = new battler("", player.getLvl(), "tells " + player.getName() + " they'll never be good enough");
+                battler grindee = new battler("", player.getLvl() - 1, "tells " + player.getName() + "they'll never be good enough");
+                grindee.randomName();
+
                 battlemanager grinder = new battlemanager(player, grindee);
                 player = grinder.battle();
+
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.BackgroundColor = ConsoleColor.White;
                 Console.Clear();
@@ -62,6 +65,13 @@ namespace rpgthing
                 Console.WriteLine("Take on another enemy? Y/N");
                 grind = Console.ReadLine();
             }
+
+            textDump.finalBattle(player.getName());
+            battler finalBoss = new battler("Crooker", 5, "says he'll never pay " + player.getName() + " back");
+            battlemanager finalFight = new battlemanager(player, finalBoss);
+            player = finalFight.battle();
+
+            textDump.youWin(player.getName());
         }
     }
 }

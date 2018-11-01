@@ -131,7 +131,7 @@ namespace rpgthing
                     Console.Write("\t" + receiver.getName());
 
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write(" is hit for " + damage + " damage!");
+                    Console.Write(" takes " + damage + " damage!");
 
                     if (silenceDmg > 0)
                     {

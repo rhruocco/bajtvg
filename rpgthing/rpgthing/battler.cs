@@ -11,7 +11,7 @@ namespace rpgthing
         private String name, insult;
         private double level, hp, xp, maxhp;
         private Random rng = new Random();
-        private int stickers = 3;
+        private int stickers = 5;
         private String[] adjectives = {"Stinky","Smelly","No-Good","Ramblin'","Evil","Strange","Foul-Smelling",
             "Three-Eyed","Angry","Funny","Questionable" };
 
@@ -26,10 +26,10 @@ namespace rpgthing
             name = n;
             level = lvl;
             //DEBUG RYAN RYAAAAAAN REMOVE THIS LATEEEERRR
-            if (n == "debug")
-            {
-                level = 99;
-            }
+            //if (n == "debug")
+            //{
+            //    level = 99;
+            //}
             maxhp = lvl * 10;
             insult = insultt;
             hp = maxhp;
