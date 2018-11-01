@@ -12,14 +12,6 @@ namespace rpgthing
     class textDumper
     {
         /*
-         * Constructor for the textDumper class
-         */
-        public textDumper()
-        {
-
-        }
-
-        /*
          * Prints the intro text, and returns a name for the player
          */
         public string intro()
